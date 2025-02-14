@@ -3,10 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=https://kdiaz0101.github.io/happy-valentines/">
-  <title>Wait lang honey my love so sweet...</title>
+  <title>Anniversary Puzzle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, #f7c5c5, #f5a8a8);
+      color: #333;
+    }
+    .puzzle-container {
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #ff6f6f;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #ff4b4b;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #4CAF50;
+    }
+    .error {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #FF0000;
+    }
+  </style>
 </head>
 <body>
-  <p>If you are not redirected, <a href="https://kdiaz0101.github.io/happy-valentines/">click here</a>.</p>
+  <div class="puzzle-container">
+    <h1>Anniversary Puzzle</h1>
+    <p>Solve the riddles to unlock our special memory!</p>
+    
+    <!-- Clue 1 -->
+    <label for="month">1. Halfway through the year, when summer's in bloom, what month is it?</label>
+    <input type="text" id="month" placeholder="Answer the month (2 digits)">
+
+    <!-- Clue 2 -->
+    <label for="day">2. The end of the month, cherished and dear. What day am I?</label>
+    <input type="text" id="day" placeholder="Answer the day (2 digits)">
+
+    <!-- Clue 3 -->
+    <label for="year">3. A leap of love in the twenties. What year am I?</label>
+    <input type="text" id="year" placeholder="Answer the year (4 digits)">
+
+    <!-- Submit button -->
+    <button id="submit">Unlock</button>
+
+    <!-- Message area -->
+    <div id="message"></div>
+  </div>
+
+  <script>
+    document.getElementById('submit').addEventListener('click', function () {
+      const month = document.getElementById('month').value.trim();
+      const day = document.getElementById('day').value.trim();
+      const year = document.getElementById('year').value.trim();
+
+      // Validate the inputs
+      if (month === "06" && day === "30" && year === "2024") {
+        document.getElementById('message').innerHTML = `<p class='message'>Correct! Click <a href='https://kdiaz0101.github.io/happyvalentines-06302024/' target='_blank'>here</a> to see your surprise! 💖</p>`;
+      } else {
+        document.getElementById('message').innerHTML = `<p class='error'>Hmm, that doesn't seem right. Try again!</p>`;
+      }
+    });
+  </script>
 </body>
 </html>
